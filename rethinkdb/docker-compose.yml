@@ -1,0 +1,11 @@
+version: '2'
+services:
+  rethinkdb:
+    image: rethinkdb
+    container_name: rethinkdb
+    volumes:
+      - ./db:/data
+    ports:
+      - "33361:8080"
+      - "28015:28015"
+      - "29015:29015"
