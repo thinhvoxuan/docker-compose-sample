@@ -1,0 +1,13 @@
+version: '2'
+services:
+  gupm:
+    image: xuanthinh244/docker-phalcon:v3.0.0
+    container_name: phalcon
+    volumes:
+      - ./src:/var/www/phalcon/
+      - ./src/log:/var/log/apache2
+    ports:
+      - 7171:80
+    environment:
+      - ALLOW_OVERRIDE=true
+      - APPLICATION_ENV=development
