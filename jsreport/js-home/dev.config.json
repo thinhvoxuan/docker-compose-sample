@@ -1,0 +1,29 @@
+{
+    "authentication" : {
+        "cookieSession": {
+            "secret": "<secret key>"
+        },
+        "admin": {
+            "username" : "admin",
+            "password": "password"
+        },
+        "enabled": false
+    },
+    "connectionString": { "name": "fs" },
+    "httpPort": 36376,
+    "httpsPort": null,
+    "blobStorage": "fileSystem",
+    "phantom": {
+        "strategy": "dedicated-process",
+        "timeout": 60000
+    },
+    "tasks": {
+        "strategy": "dedicated-process",
+        "timeout": 10000,
+        "allowedModules": []
+    },
+    "scripts": {
+        "allowedModules": [],
+        "timeout": 60000
+    }
+}

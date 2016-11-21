@@ -1,0 +1,8 @@
+version: "2"
+services:
+  js_report:
+    image: jsreport/jsreport
+    volumes:
+      - ./js-home:/jsreport
+    ports:
+      - 5002:36376
