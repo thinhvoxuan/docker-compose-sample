@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+ sonar-scanner:
+  build: ./sonar-scanner
+  networks:
+    - sonarnet
+  environment:
+   - SONAR_HOST_URL=http://sonarqube:9000
+   - SONAR_PROJECT_KEY=hello:world
+   - SONAR_PROJECT_NAME=HelloWorld
+   - SONAR_PROJECT_VERSION=0.1
+
+networks:
+  sonarnet:
+    external: 
+        name: sonar_sonarnet
+ 
