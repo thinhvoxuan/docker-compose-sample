@@ -1,0 +1,13 @@
+version: '2'
+services:
+  minio:
+    image: minio/minio
+    container_name: minio
+    volumes:
+      - ./minio-data:/uploads
+    environment:
+      - MINIO_ACCESS_KEY=AKIAIOSFODNN7EXAMPLE
+      - MINIO_SECRET_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+    ports:
+      - 9000:9000
+    command: server /uploads
