@@ -1,13 +1,22 @@
 version: '2'
 services:
   mailhog:
-      image: mailhog/mailhog
-      container_name: mailhog
-      ports:
-       - "1025:1025"
-       - "8025:8025"
-     environment: 
-       - MH_STORAGE=maildir
-       - MH_MAILDIR_PATH=/tmp/mailhog
-     volumes:
-       - ./maildir:/tmp/mailhog
+    image: mailhog/mailhog
+    container_name: mailhog
+    ports:
+      - 1025:1025
+      - 8025:8025
+    environment: 
+      - MH_STORAGE=mongodb
+      - MH_MONGO_URI=mongodb:27017
+    links:
+      - mongodb:mongodb
+    depends_on:
+      - mongodb
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    volumes:
+      - ./db:/data/db
