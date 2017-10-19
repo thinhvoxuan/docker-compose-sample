@@ -6,8 +6,8 @@ services:
     volumes:
       - ./minio-data:/uploads
     environment:
-      - MINIO_ACCESS_KEY=AKIAIOSFODNN7EXAMPLE
-      - MINIO_SECRET_KEY=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+      - MINIO_ACCESS_KEY=xxx
+      - MINIO_SECRET_KEY=xxx
     ports:
       - 9000:9000
     command: server /uploads
