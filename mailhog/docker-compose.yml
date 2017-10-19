@@ -9,10 +9,13 @@ services:
     environment: 
       - MH_STORAGE=mongodb
       - MH_MONGO_URI=mongodb:27017
+    volumes:
+      - ./conf:/data/conf
     links:
       - mongodb:mongodb
     depends_on:
       - mongodb
+    entrypoint: MailHog -auth-file=/data/conf/authfile 
   mongodb:
     image: mongo
     container_name: mongodb
